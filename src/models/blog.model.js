@@ -8,7 +8,8 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const schema = new Schema({
     titulo: { type: String, required: true },
-    descripcion: { type: String, required: true }
+    descripcion: { type: String, required: true },
+    img: { type: String, required: true },
   }, {
     timestamps: true
   });
