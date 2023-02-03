@@ -9,6 +9,11 @@ module.exports = function (app) {
   
     email: { type: String, unique: true, lowercase: true },
     password: { type: String },
+    img: { type: String, required: true },
+    nombre: {type: String, required: true },
+    role: {type: String, required: true },
+    descripcion: {type: String, required: true },
+
   
   
   }, {
