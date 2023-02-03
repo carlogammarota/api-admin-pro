@@ -1,4 +1,5 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
+const checkPermissions = require('feathers-permissions');
 
 const {
   hashPassword, protect
@@ -6,13 +7,18 @@ const {
 
 module.exports = {
   before: {
-    all: [],
+    all: [
+      authenticate('jwt'),
+      checkPermissions({
+        roles: [ 'admin' ]
+      })
+    ],
     find: [ authenticate('jwt') ],
     get: [ authenticate('jwt') ],
     // create: [ authenticate('jwt') ,hashPassword('password') ],
     create: [ hashPassword('password') ],
-    update: [ hashPassword('password'),  authenticate('jwt') ],
-    patch: [ hashPassword('password'),  authenticate('jwt') ],
+    update: [ authenticate('jwt') ],
+    patch: [  authenticate('jwt') ],
     remove: [ authenticate('jwt') ]
   },
 

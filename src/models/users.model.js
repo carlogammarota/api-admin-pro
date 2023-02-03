@@ -13,6 +13,7 @@ module.exports = function (app) {
     nombre: {type: String, required: true },
     role: {type: String, required: true },
     descripcion: {type: String, required: true },
+    permissions: { type: Array, required: true }
 
   
   

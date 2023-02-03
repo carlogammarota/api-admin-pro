@@ -10,6 +10,7 @@ module.exports = function (app) {
     titulo: { type: String, required: true },
     descripcion: { type: String, required: true },
     img: { type: String, required: true },
+    creador: { type: Object, required: true  }
   }, {
     timestamps: true
   });
