@@ -4,9 +4,9 @@ const returnMyBlogs = require('../../hooks/return-my-blogs');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
-    find: [returnMyBlogs()],
-    get: [],
+    // all: [ authenticate('jwt') ],
+    // find: [ returnMyBlogs() ],
+    get: [ returnMyBlogs() ],
     create: [],
     update: [],
     patch: [],
