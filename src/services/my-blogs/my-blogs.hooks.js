@@ -1,9 +1,11 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
+const returnMyBlogs = require('../../hooks/return-my-blogs');
+
 module.exports = {
   before: {
     all: [ authenticate('jwt') ],
-    find: [],
+    find: [returnMyBlogs()],
     get: [],
     create: [],
     update: [],
